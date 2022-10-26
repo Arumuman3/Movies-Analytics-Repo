@@ -2,6 +2,10 @@
 
 Movies is one of the backbone of entertainment as it consist of different genre particular to an individual. Knowing which genre is the most watched in respect to the total revenue generated over the years is a challenge for most production companies.
 
+## miniSit
+
+A mini situation.
+
 # Task
 
 The goal of this project was to perform an analysis to show the relationship between each genre trend and the anomaly of the highest revenue Hollywood movies over the years representing it in a Tableau visualization.
