@@ -27,3 +27,9 @@ On completion of the project, i discovered:
 - Drama is second in line as it generated a total revenue more than 12 billion 
 - Action comes third place as it generated a revenue of about 3 billion
 - Music was the least as it's total revenue was less than a billion
+
+# Drawbacks
+
+During the course of this project, this where the drawbacks experienced:
+- In the genre column, most sheets had more than one entry, which made distributing the revenue evenly an issue
+- In the revenue column, it was populated with more zeros than actual figures
