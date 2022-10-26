@@ -1,0 +1,54 @@
+Situation
+Movies is one of the backbone of entertainment as it consist of different genre particular to an individual, knowing which genre is the most watched in respect
+to the total revenue generated is a challenge for most production companies. In the case of this dataset we have action, adventure, animation, crime, comedy, drama, 
+documentary, fantasy, family, foreign, thriller, tv movie, science fiction, western, war, romance, mystery, music, horror, history.
+
+Task
+I am going to be performing an analysis to show the relationship between each genre trend and the anomaly of the highest revenue Hollywood movies over the years?
+ps: This task/assignment was given to me by a friend.
+
+Step 1
+Data cleaning
+The relationship to be developed is between genre, revenue, and if i may, years, just for a detailed purpose. This been said, i am only going to clean up these three
+rows, as these are my main focus.
+I took of my journey on microsoft excel, as i imported the raw data/csv file with the name moviesRaw.csv into excel.
+Next, i got into the power query editor of excel to begin manipulation.
+I duplicated the file 'moviesRaw.csv' in order for me not to loose the original copy, enabling me to work with ease on the dupicted copy in reference to the original. 
+The first row wasn't looking as much what i wanted, this made me use the function 'use first row as headers' under the transform tab, in the power query editor, now it
+is taking shape.
+The colomns where filtered into genre, revenue and release date as this were my main focus, i did this using the 'choose colomns' under the home tab, in the
+power query editor.
+I tried cleaning the genre column manually in excel as power query wasn't really giving me what i wanted.
+Got the the 200th row, and was already feeling exhusted, thinking about using python/sql/r, but mehn the symbols, arrangement was just a lot.
+On reaching the 2000th row, i thought to myself 'abi the duplicate genre are just supposed to be deleted? and the ones coming first to be kept?', but taking a deeper
+look at the dataset, more than one genre is assigned to one revenue, so how do i get the total if i discard all duplicates.
+Mehn i was already giving up, but no, it's on of those things, so i did continue.
+On reaching the 4000th row, was so tired already, felt like giving up, but no, i have come this far, so i continued on my journey to the end. It was a little more than
+800 rows remaining.
+6000th row? what? the dataset lied. Was thinking it was only going to be 4800+ rows, but then i remembered, each row on the genre column had a minimum of 1 entry and a
+maximum of 6 entries, so why not? expansion was taking place as it went to the next line. At least i was making progress.
+On my way to success, i came across some bad values, one of the road blocks in data cleaning.
+Finally, i was done stretching out the genre column. It went from 4800+ rows to a whooping 12160 rows. Doing this manually was really stressful, but i wasn't done just
+yet.
+Next, i created a new excel sheet to split the already prepared genre table into its subordinate, genreId and genreCat(Cat stand for category for long). I did this in 
+the power query editor by spliting by delimeter('space' was the delimeter in this case), each occurance of the delimiter, and the advanced option being the quotation
+mark(").
+I discovered 3 error rows, and i was on my way to clean it, this is simple, at the home page of the power query editor, there is romove row(s) function, select the
+dropdown and chose remove error rows, easy.
+Off to one of my most interesting tool, Python. Couldn't give this dataset a chance, had to pass it through the mouth of the snake to check if it is really clean, also
+there were loads of duplicates to be taken care of too, after this i saved the file to csv with the .to_csv() function, all things set for the genre column, next to
+fix my date column.
+Started off by opening the anaconda prompt shell, and typing in the keyword 'Jupyter notebook' to open it. After it opened, i kicked off a new python file which i
+named 'genreCleaning'. I imported pandas(a python library) as pd, to enable me load the csv file 'genreCleanTwo.csv'. The file was successfully imported, did a little
+crosschecking just to be sure it waas the right file, time to kick of cleaning.
+First of all, i checked for null values using the pandas .isnull() function, then for nan values using numpy .isnan() function, it all returned zeros and false, meaning
+i was good to go. Checking for bad data in a categorical variable can be a pain in the ass, and since it was all couplated manually, i was sure there wasn't going to
+be a bad value, so i went unto seaching for duplicate values using the .duplicated() function, and to my excitement, there were loads of duplicate values, i finally
+dropped all dupicate values, now my table is looking cleaner.
+i had to select out the good rows and take out the bad ones from the genre column manually, in respect to revenue and date. What i mean by this is, if there where more
+than one entry in a genre cell it will be deleted, because the revenue could not be gambled.
+Next to fix my date column. The date column was originally in text format, i converted it to date format for clarity purpose, in the power query editor in microsoft
+excel, i clicked on the top left 'abc' icon, got a drop down and selected the date format, that easy. But i only had interest in the year of the date column, so i took
+it out.
+I was done cleaning out the column in excel, but had to visit python to cross-check all coloumns and rows as usual.
+Next i took a sum total of each genre revenue in excel by using the function =sum().
